@@ -24,7 +24,7 @@ section { padding: clamp(56px, 9vw, 112px) 0; }
 .sec-head { display: grid; gap: 14px; margin-bottom: clamp(28px, 5vw, 52px); max-width: 720px; }
 
 /* header */
-.top { position: sticky; top: 0; z-index: 40; background: rgba(245,241,232,.88); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+.top { position: sticky; top: 0; z-index: 40; background: rgba(245,241,232,.97); border-bottom: 1px solid var(--line); }
 .top .wrap { display: flex; align-items: center; justify-content: space-between; height: 68px; gap: 16px; }
 .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font: 500 1.35rem/1 var(--serif); letter-spacing: -.01em; }
 .brand small { display: block; font: 600 .6rem/1 var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--muted); margin-top: 4px; }
@@ -213,3 +213,4 @@ details p { margin-top: 12px; color: var(--ink2); max-width: 64ch; }
   .proof { gap: 20px; }
 }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
+section:not(.hero), .foot { content-visibility: auto; contain-intrinsic-size: auto 720px; }
