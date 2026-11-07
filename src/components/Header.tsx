@@ -28,7 +28,7 @@ export default function Header() {
   return (
     <header className="top">
       <div className="wrap">
-        <Link href="/" className="brand" aria-label="Fiel Contabilidade, página inicial"><Logo /></Link>
+        <Link href="/" className="brand"><Logo /></Link>
         <button className="menu-btn" aria-expanded={open} aria-controls="nav" aria-label={open ? 'Fechar menu' : 'Abrir menu'} onClick={() => setOpen(!open)}>
           <Icon n={open ? 'close' : 'menu'} />
         </button>

@@ -154,10 +154,11 @@ details p { margin-top: 12px; color: var(--ink2); max-width: 64ch; }
 /* footer */
 .foot { background: var(--ink); color: #cfd6d9; padding: 56px 0 28px; font-size: .95rem; }
 .foot .cols { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 32px; padding-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,.16); }
-.foot h4 { margin: 0 0 12px; color: #fff; font: 600 .78rem var(--sans); letter-spacing: .14em; text-transform: uppercase; }
+.foot .h4 { margin: 0 0 12px; color: #fff; font: 600 .78rem var(--sans); letter-spacing: .14em; text-transform: uppercase; }
 .foot a { display: block; text-decoration: none; padding: 4px 0; }
 .foot a:hover { color: #fff; }
 .foot .brand { color: #fff; }
+.foot .brand small { color: #aebbc1; }
 .foot .fine { padding-top: 22px; font-size: .82rem; color: #9fadb3; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
 
 /* client area */
