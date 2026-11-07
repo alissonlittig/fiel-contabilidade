@@ -18,7 +18,7 @@ export default async function Servico({ params }: { params: Promise<{ slug: stri
   return (
     <div className="wrap">
       <div className="page-h">
-        <p className="crumb"><Link href="/servicos/">Serviços</Link> / {s.nome}</p>
+        <p className="crumb"><Link prefetch={false} href="/servicos/">Serviços</Link> / {s.nome}</p>
         <h1>{s.nome}</h1>
         <p className="lead">{s.resumo}</p>
       </div>
@@ -33,7 +33,7 @@ export default async function Servico({ params }: { params: Promise<{ slug: stri
           <div><span className="eyebrow">A partir de</span><p style={{ font: '500 1.7rem/1.2 var(--serif)', marginTop: 6 }}>{s.desde}</p></div>
           <div><b>Prazo</b><p style={{ color: 'var(--ink2)' }}>{s.prazo}</p></div>
           <div><b>Para quem</b><p style={{ color: 'var(--ink2)' }}>{s.para}</p></div>
-          <Link href="/contato/" className="btn copper">Pedir proposta</Link>
+          <Link prefetch={false} href="/contato/" className="btn copper">Pedir proposta</Link>
         </aside>
       </div>
     </div>

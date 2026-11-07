@@ -28,15 +28,15 @@ export default function Header() {
   return (
     <header className="top">
       <div className="wrap">
-        <Link href="/" className="brand"><Logo /></Link>
+        <Link prefetch={false} href="/" className="brand"><Logo /></Link>
         <button className="menu-btn" aria-expanded={open} aria-controls="nav" aria-label={open ? 'Fechar menu' : 'Abrir menu'} onClick={() => setOpen(!open)}>
           <Icon n={open ? 'close' : 'menu'} />
         </button>
         <nav id="nav" className="nav" data-open={open} onClick={() => setOpen(false)} aria-label="Principal">
           {links.map((l) => (
-            <Link key={l.href} href={l.href} aria-current={path.startsWith(l.href.slice(0, -1)) ? 'page' : undefined}>{l.label}</Link>
+            <Link prefetch={false} key={l.href} href={l.href} aria-current={path.startsWith(l.href.slice(0, -1)) ? 'page' : undefined}>{l.label}</Link>
           ))}
-          <Link href="/cliente/" className="btn">Área do cliente</Link>
+          <Link prefetch={false} href="/cliente/" className="btn">Área do cliente</Link>
         </nav>
       </div>
     </header>

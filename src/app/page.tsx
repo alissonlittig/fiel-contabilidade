@@ -21,8 +21,8 @@ export default function Home() {
             <h1 style={{ marginTop: 16 }}>Contas em ordem, <em>decisões</em> com calma.</h1>
             <p className="lead">Cuidamos de impostos, folha e abertura de empresa com prazo cumprido e relatório em português claro. Você acompanha tudo no portal.</p>
             <div className="cta">
-              <Link href="/contato/" className="btn copper">Pedir uma proposta</Link>
-              <Link href="/cliente/" className="btn ghost">Ver o portal do cliente</Link>
+              <Link prefetch={false} href="/contato/" className="btn copper">Pedir uma proposta</Link>
+              <Link prefetch={false} href="/cliente/" className="btn ghost">Ver o portal do cliente</Link>
             </div>
             <div className="proof">
               <div><b>312</b><span>empresas atendidas</span></div>
@@ -54,7 +54,7 @@ export default function Home() {
           </div>
           <div className="grid4">
             {servicos.map((s) => (
-              <Link key={s.slug} href={`/servicos/${s.slug}/`} className="card">
+              <Link prefetch={false} key={s.slug} href={`/servicos/${s.slug}/`} className="card">
                 <span className="ico"><Icon n={s.icone} /></span>
                 <h3>{s.nome}</h3>
                 <p>{s.resumo}</p>
@@ -117,7 +117,7 @@ export default function Home() {
           <div className="sec-head"><p className="eyebrow">Blog</p><h2>Conteúdo para decidir melhor, sem jargão.</h2></div>
           <div className="posts">
             {posts.slice(0, 3).map((p) => (
-              <Link key={p.slug} href={`/blog/${p.slug}/`} className="post">
+              <Link prefetch={false} key={p.slug} href={`/blog/${p.slug}/`} className="post">
                 <div className="meta"><span className="tag">{p.tag}</span><span>{fmtData(p.data)}</span></div>
                 <h3>{p.titulo}</h3>
                 <p>{p.resumo}</p>
@@ -140,7 +140,7 @@ export default function Home() {
         <div className="wrap" style={{ display: 'grid', gap: 22, justifyItems: 'center' }}>
           <h2 style={{ maxWidth: '18ch' }}>Pronto para fechar o mês sem correria?</h2>
           <p className="lead">Conte como é a sua empresa e receba uma proposta em um dia útil.</p>
-          <Link href="/contato/" className="btn copper">Pedir proposta</Link>
+          <Link prefetch={false} href="/contato/" className="btn copper">Pedir proposta</Link>
         </div>
       </section>
     </>

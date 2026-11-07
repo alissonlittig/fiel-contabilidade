@@ -15,7 +15,7 @@ export default function BlogLista() {
       </div>
       <div className="posts">
         {lista.map((p) => (
-          <Link key={p.slug} href={`/blog/${p.slug}/`} className="post">
+          <Link prefetch={false} key={p.slug} href={`/blog/${p.slug}/`} className="post">
             <div className="meta"><span className="tag">{p.tag}</span><span>{fmtData(p.data)}</span><span>{p.min} min</span></div>
             <h3>{p.titulo}</h3>
             <p>{p.resumo}</p>

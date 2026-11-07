@@ -8,18 +8,18 @@ export default function Footer() {
       <div className="wrap">
         <div className="cols">
           <div>
-            <Link href="/" className="brand"><Logo /></Link>
+            <Link prefetch={false} href="/" className="brand"><Logo /></Link>
             <p style={{ marginTop: 14, maxWidth: '38ch' }}>Contabilidade para pequenas empresas, com guias no prazo e relatórios que o dono entende.</p>
           </div>
           <div>
             <p className="h4">Serviços</p>
-            {servicos.map((s) => <Link key={s.slug} href={`/servicos/${s.slug}/`}>{s.nome}</Link>)}
+            {servicos.map((s) => <Link prefetch={false} key={s.slug} href={`/servicos/${s.slug}/`}>{s.nome}</Link>)}
           </div>
           <div>
             <p className="h4">Escritório</p>
-            <Link href="/blog/">Blog</Link>
-            <Link href="/cliente/">Área do cliente (demo)</Link>
-            <Link href="/contato/">Contato</Link>
+            <Link prefetch={false} href="/blog/">Blog</Link>
+            <Link prefetch={false} href="/cliente/">Área do cliente (demo)</Link>
+            <Link prefetch={false} href="/contato/">Contato</Link>
           </div>
         </div>
         <div className="fine">

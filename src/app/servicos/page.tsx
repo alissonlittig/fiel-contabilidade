@@ -15,7 +15,7 @@ export default function Servicos() {
       </div>
       <div className="grid4" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', paddingBottom: 90 }}>
         {servicos.map((s) => (
-          <Link key={s.slug} href={`/servicos/${s.slug}/`} className="card">
+          <Link prefetch={false} key={s.slug} href={`/servicos/${s.slug}/`} className="card">
             <span className="ico"><Icon n={s.icone} /></span>
             <h3>{s.nome}</h3>
             <p>{s.resumo}</p>

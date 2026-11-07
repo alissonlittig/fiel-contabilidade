@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from 'next';
 import '@fontsource-variable/newsreader';
-import '@fontsource-variable/newsreader/wght-italic.css';
 import '@fontsource-variable/inter-tight';
 import './globals.css';
 import Header from '@/components/Header';

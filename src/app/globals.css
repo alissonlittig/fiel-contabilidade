@@ -44,7 +44,7 @@ section { padding: clamp(56px, 9vw, 112px) 0; }
 /* hero */
 .hero { padding: clamp(40px, 7vw, 88px) 0 clamp(56px, 8vw, 100px); }
 .hero .wrap { display: grid; grid-template-columns: 1.05fr .95fr; gap: clamp(32px, 5vw, 72px); align-items: center; }
-.hero h1 em { font-style: italic; color: var(--copper); }
+.hero h1 em { font-style: normal; color: var(--copper); }
 .hero .lead { margin: 22px 0 30px; }
 .cta { display: flex; flex-wrap: wrap; gap: 12px; }
 .proof { display: flex; gap: 28px; margin-top: 38px; padding-top: 24px; border-top: 1px solid var(--line); flex-wrap: wrap; }
