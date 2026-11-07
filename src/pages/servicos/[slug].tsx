@@ -1,22 +1,16 @@
-import type { Metadata } from 'next';
+import type { GetStaticPaths, GetStaticProps } from 'next';
 import Link from 'next/link';
-import { notFound } from 'next/navigation';
+import Seo from '@/components/Seo';
 import Icon from '@/components/Icon';
-import { servicos, servicoPorSlug } from '@/lib/servicos';
+import { servicos, servicoPorSlug, type Servico as S } from '@/lib/servicos';
 
-export const dynamicParams = false;
-export const generateStaticParams = () => servicos.map((s) => ({ slug: s.slug }));
+export const getStaticPaths: GetStaticPaths = () => ({ paths: servicos.map((s) => ({ params: { slug: s.slug } })), fallback: false });
+export const getStaticProps: GetStaticProps<{ s: S }> = ({ params }) => ({ props: { s: servicoPorSlug(String(params?.slug))! } });
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
-  const s = servicoPorSlug((await params).slug);
-  return s ? { title: s.nome, description: s.resumo } : {};
-}
-
-export default async function Servico({ params }: { params: Promise<{ slug: string }> }) {
-  const s = servicoPorSlug((await params).slug);
-  if (!s) notFound();
+export default function Servico({ s }: { s: S }) {
   return (
     <div className="wrap">
+      <Seo title={s.nome} description={s.resumo} />
       <div className="page-h">
         <p className="crumb"><Link prefetch={false} href="/servicos/">Serviços</Link> / {s.nome}</p>
         <h1>{s.nome}</h1>

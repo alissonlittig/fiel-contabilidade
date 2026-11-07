@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Seo from '@/components/Seo';
 import Icon from '@/components/Icon';
 import Calculadora from '@/components/Calculadora';
 import { servicos } from '@/lib/servicos';
@@ -14,6 +15,7 @@ const faq = [
 export default function Home() {
   return (
     <>
+      <Seo description="Contabilidade para pequenas empresas: abertura, mensal, folha e imposto de renda, com portal do cliente. Site de demonstração com marca fictícia." />
       <section className="hero">
         <div className="wrap">
           <div>

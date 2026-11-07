@@ -1,4 +1,3 @@
-'use client';
 import { useState } from 'react';
 import { honorario, brl, type Regime } from '@/lib/honorarios';
 

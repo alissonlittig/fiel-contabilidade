@@ -1,21 +1,15 @@
-import type { Metadata } from 'next';
+import type { GetStaticPaths, GetStaticProps } from 'next';
 import Link from 'next/link';
-import { notFound } from 'next/navigation';
-import { posts, postPorSlug, fmtData } from '@/lib/posts';
+import Seo from '@/components/Seo';
+import { posts, postPorSlug, fmtData, type Post } from '@/lib/posts';
 
-export const dynamicParams = false;
-export const generateStaticParams = () => posts.map((p) => ({ slug: p.slug }));
+export const getStaticPaths: GetStaticPaths = () => ({ paths: posts.map((p) => ({ params: { slug: p.slug } })), fallback: false });
+export const getStaticProps: GetStaticProps<{ p: Post }> = ({ params }) => ({ props: { p: postPorSlug(String(params?.slug))! } });
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
-  const p = postPorSlug((await params).slug);
-  return p ? { title: p.titulo, description: p.resumo } : {};
-}
-
-export default async function Artigo({ params }: { params: Promise<{ slug: string }> }) {
-  const p = postPorSlug((await params).slug);
-  if (!p) notFound();
+export default function Artigo({ p }: { p: Post }) {
   return (
     <div className="wrap">
+      <Seo title={p.titulo} description={p.resumo} />
       <article className="article page-h" style={{ paddingBottom: 90 }}>
         <p className="crumb"><Link prefetch={false} href="/blog/">Blog</Link> / {p.tag}</p>
         <div className="meta"><span className="tag">{p.tag}</span><span>{fmtData(p.data)}</span><span>{p.min} min de leitura</span></div>

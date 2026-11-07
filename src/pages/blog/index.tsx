@@ -1,11 +1,10 @@
-import type { Metadata } from 'next';
+import Seo from '@/components/Seo';
 import BlogLista from '@/components/BlogLista';
-
-export const metadata: Metadata = { title: 'Blog', description: 'Artigos curtos sobre impostos, rotina fiscal e gestão para pequenas empresas.' };
 
 export default function Blog() {
   return (
     <div className="wrap">
+      <Seo title="Blog" description="Artigos curtos sobre impostos, rotina fiscal e gestão para pequenas empresas." />
       <div className="page-h">
         <p className="eyebrow">Blog</p>
         <h1 style={{ marginTop: 14 }}>Contabilidade sem jargão.</h1>

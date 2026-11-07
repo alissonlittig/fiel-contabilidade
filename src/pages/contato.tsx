@@ -1,11 +1,10 @@
-import type { Metadata } from 'next';
+import Seo from '@/components/Seo';
 import ContatoForm from '@/components/ContatoForm';
-
-export const metadata: Metadata = { title: 'Contato', description: 'Peça uma proposta de contabilidade para a sua empresa.' };
 
 export default function Contato() {
   return (
     <div className="wrap">
+      <Seo title="Contato" description="Peça uma proposta de contabilidade para a sua empresa." />
       <div className="page-h"><p className="eyebrow">Contato</p><h1 style={{ marginTop: 14 }}>Conte da sua empresa.</h1></div>
       <div className="contact" style={{ paddingBottom: 90 }}>
         <div style={{ display: 'grid', gap: 18 }}>

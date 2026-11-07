@@ -1,6 +1,5 @@
-'use client';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { useRouter } from 'next/router';
 import { useState } from 'react';
 import Icon from './Icon';
 
@@ -24,7 +23,7 @@ export function Logo() {
 
 export default function Header() {
   const [open, setOpen] = useState(false);
-  const path = usePathname() ?? '';
+  const path = useRouter().asPath;
   return (
     <header className="top">
       <div className="wrap">

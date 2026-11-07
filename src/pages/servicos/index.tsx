@@ -1,13 +1,13 @@
-import type { Metadata } from 'next';
+import Seo from '@/components/Seo';
 import Link from 'next/link';
 import Icon from '@/components/Icon';
 import { servicos } from '@/lib/servicos';
 
-export const metadata: Metadata = { title: 'Serviços', description: 'Abertura de empresa, contabilidade mensal, folha e imposto de renda.' };
 
 export default function Servicos() {
   return (
     <div className="wrap">
+      <Seo title="Serviços" description="Abertura de empresa, contabilidade mensal, folha e imposto de renda." />
       <div className="page-h">
         <p className="eyebrow">Serviços</p>
         <h1 style={{ marginTop: 14 }}>O que entregamos, e quando.</h1>
